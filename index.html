@@ -5,7 +5,7 @@
     <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
 
-    <!-- IMPORTED COMPONENTS -->
+    <!-- COMPONENTES IMPORTADOS-->
     <script src="./js/Fish.js"></script>
     <script src="./js/Treasure.js"></script>
     <script src="./js/Rotation.js"></script>
@@ -13,7 +13,7 @@
   </head>
   <body>
     <a-scene physics>
-      <!---Assets-->
+      <!---Archivos-->
       <a-a-assets>
         <a-asset-item id="island" src="assets/island/scene.gltf"></a-asset-item>
 
@@ -33,7 +33,7 @@
         ></a-asset-item>
       </a-a-assets>
 
-      <!-- Sky -->
+      <!-- Cielo -->
       <a-sky
         geometry="primitive: sphere;"
         material="shader: gradient; bottomColor: #00009e; topColor:109 205 227;offset: 0.0001;"
@@ -42,16 +42,16 @@
         side="double"
         animation="property: rotation; to: 0 300 0; easing:linear; loop: true; dur: 500000"
       >
-        <!------------------------------------GLTF Models------------------------------------------>
+        <!------------------------------------Modelos GLTF------------------------------------------>
 
-        <!--Island-->
+        <!--Isla-->
         <a-entity
           gltf-model="#island"
           scale="1 1 1"
           position="0 -15 -40"
         ></a-entity>
 
-        <!--Trasures-->
+        <!--Tesoros-->
         <a-entity
           gltf-model="#treasure"
           scale="15 15 15"
@@ -73,13 +73,13 @@
           rotation="0 90 0"
         ></a-entity>
 
-        <!--Fish Entity-->
+        <!--Entidad de pez-->
         <a-entity position="0 0 0" id="fishModels" fish> </a-entity>
 
-        <!--Treasure Entity-->
+        <!--Entidad de tesoro-->
         <a-entity position="0 0 0" id="treasureCoins" coins> </a-entity>
 
-        <!--Turtule-->
+        <!--Turtuga-->
         <a-entity
           gltf-model="#turtle"
           scale="0.005 0.005 0.005"
@@ -88,7 +88,7 @@
         ></a-entity>
       </a-sky>
 
-      <!--Scuba Driver-->
+      <!--Buceador-->
       <a-entity
         gltf-model="#scuba_driver"
         scale="0.1 0.1 0.1"
@@ -113,26 +113,26 @@
 
       <a-cylinder color="#00009e" radius="100" opacity="0.2"></a-cylinder>
 
-      <!-- CAMERA -->
+      <!-- CÁMARA -->
       <a-entity
         camera="active: true"
         look-controls
         position="0 10 25"
       ></a-entity>
 
-       <!-----------------------------------Game Timer and Score------------------------------------------>
+       <!-----------------------------------Temporizador y puntaje------------------------------------------>
        <a-entity id="header" position="1 5 0">
-        <!-- Title -->
+        <!-- Título -->
         <a-entity
           position="-28.5 21.5 0"
-          text="font: exo2bold; align: center; width: 45; color: black; value:VR Scuba Dive"
+          text="font: exo2bold; align: center; width: 45; color: black; value:Buceador VR "
         ></a-entity>
 
-        <!-- Timer -->
+        <!-- Temporizador -->
         <a-entity position="-23.5 19.3 0">
           <a-entity
             position=""
-            text="font: aileronsemibold; width: 14; color: black; value: TIME\nREMAINING"
+            text="font: aileronsemibold; width: 14; color: black; value: Tiempo\nrestante"
           ></a-entity>
           <a-entity
             id="timer"
@@ -141,11 +141,11 @@
           ></a-entity>
         </a-entity>
 
-        <!-- Traget Status -->
+        <!-- Estado de los objetivos -->
         <a-entity position="-18 19.3 0">
           <a-entity
             position=""
-            text="font: aileronsemibold; width: 13; color: black; value: TRAGETS\nREMAINING"
+            text="font: aileronsemibold; width: 13; color: black; value: Objetivos\nrestantes"
           ></a-entity>
           <a-entity
             id="targets"
@@ -154,11 +154,11 @@
           ></a-entity>
         </a-entity>
 
-        <!-- Score -->
+        <!-- Puntaje -->
         <a-entity position="30.5 21.5 0">
           <a-entity
             position=""
-            text="font: exo2bold; align: center; width: 30; color: black; value: SCORE"
+            text="font: exo2bold; align: center; width: 30; color: black; value: PUNTAJE"
           ></a-entity>
           <a-entity
             id="score"
@@ -168,11 +168,11 @@
         </a-entity>
       </a-entity>
 
-      <!------------------------------------Game Over-------------------------------->
+      <!------------------------------------Fin del juego-------------------------------->
       <a-entity
         id="game_over_text"
         position="0 20 0"
-        text="font: exo2bold; align: center; width: 100; color: white;value: Game Over!!!"
+        text="font: exo2bold; align: center; width: 100; color: white;value: Fin del juego"
         visible="false"
       ></a-entity>
 

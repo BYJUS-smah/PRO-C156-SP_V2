@@ -1,4 +1,4 @@
-//Diver rotation component
+//Componente de rotación del buceador.
 AFRAME.registerComponent("diver-rotation-reader", {
   schema: {
     speedOfRoation: { type: "number", default: 0 },
@@ -7,14 +7,14 @@ AFRAME.registerComponent("diver-rotation-reader", {
   init: function () {
     window.addEventListener("keydown", (e) => {
 
-      //get the data from the attributes
+      //Obtener los datos de los atributos.
       this.data.speedOfRoation = this.el.getAttribute("rotation");      
       this.data.speedOfMovement = this.el.getAttribute("position");
 
       var diverRotation = this.data.speedOfRoation;      
       var diverPosition = this.data.speedOfMovement;
 
-      //control the attributes with the Arrow Keys
+      //Control de los atributos con las teclas de las flechas.
       if (e.key === "ArrowDown") {
         if (diverPosition.z < 20) {
           diverPosition.z += 0.1;
